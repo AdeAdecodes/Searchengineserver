@@ -34,9 +34,9 @@ app.all('*', (request, response) => {
 });
 
 const debug = Debug('http');
-const PORT = 3000; // setup PORT to be used
+const PORT = 5000; // setup PORT to be used
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   debug(`Server is running on PORT ${PORT}`);
 });
 
