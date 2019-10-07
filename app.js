@@ -34,10 +34,12 @@ app.all('*', (request, response) => {
 });
 
 const debug = Debug('http');
-const PORT = 5000; // setup PORT to be used
 
-app.listen(PORT, () => {
-  debug(`Server is running on PORT ${PORT}`);
+app.set('port', (process.env.PORT || 5000));
+
+// Start node server
+app.listen(app.get('port'), () => {
+  debug(`Node server is running on port ${app.get('port')}`);
 });
 
 export default app;
